@@ -13,21 +13,21 @@ Module.register("MMM-RAIN-RADAR", {
 	defaults: {
 		height: "270px",
 		width: "400px",
-		zoomLevel: 6,
-		mapType: 3, //0-Road Map 1-Satellite 2-Dark Map 3-OpenStreetMaps 4-Light Map
-		color: 3, //0-Original 1-Universal Blue 2-TITAN 3-The Weather Channel 5-NEXRAD Level-III 6-RAINBOW @ SELEX-SI
-		snow: 1,
-		smoothing: 1,
-		opacity: 88,
-		fastAnimation: 0,
-		coverage: 0,
-		darkTheme: 1,
-		UTCtime: 0,
-		legend: 1,
-		legendMin: 0, //set legend to 1 if you want legendMin to show
-		animate: 1,
-		area: "IL",
-		updateOnWarning: 1,
+		//zoomLevel: 6,
+		//mapType: 3, //0-Road Map 1-Satellite 2-Dark Map 3-OpenStreetMaps 4-Light Map
+		//color: 3, //0-Original 1-Universal Blue 2-TITAN 3-The Weather Channel 5-NEXRAD Level-III 6-RAINBOW @ SELEX-SI
+		//snow: 1,
+		//smoothing: 1,
+		//opacity: 88,
+		//fastAnimation: 0,
+		//coverage: 0,
+		//darkTheme: 1,
+		//UTCtime: 0,
+		//legend: 1,
+		//legendMin: 0, //set legend to 1 if you want legendMin to show
+		//animate: 1,
+		//area: "IL",
+		//updateOnWarning: 1,
 		updateInterval: 5 * 60 * 1000, // every five minutes check for alerts
 	},
 
@@ -49,11 +49,11 @@ Module.register("MMM-RAIN-RADAR", {
 		iframe.width = this.config.width;
 		iframe.height = this.config.height;
 
-		let lat = this.config.lat;
-		let lon = this.config.lon;
+		//let lat = this.config.lat;
+		//let lon = this.config.lon;
 
 		// tail for src
-		let tail = `${this.config.zoomLevel}&oFa=${this.config.fastAnimation}&oC=${this.config.coverage}&oU=${this.config.UTCtime}&oCS=${this.config.legend}&oF=0&oAP=${this.config.animate}&rmt=${this.config.mapType}&c=${this.config.color}&o=${this.config.opacity}&lm=${this.config.legendMin}&th=${this.config.darkTheme}&sm=${this.config.smoothing}&sn=${this.config.snow}`;
+		//let tail = `${this.config.zoomLevel}&oFa=${this.config.fastAnimation}&oC=${this.config.coverage}&oU=${this.config.UTCtime}&oCS=${this.config.legend}&oF=0&oAP=${this.config.animate}&rmt=${this.config.mapType}&c=${this.config.color}&o=${this.config.opacity}&lm=${this.config.legendMin}&th=${this.config.darkTheme}&sm=${this.config.smoothing}&sn=${this.config.snow}`;
 		let zip = this.config.zip;
 		let code = this.config.code;
 		let town = this.config.town;
@@ -72,9 +72,10 @@ Module.register("MMM-RAIN-RADAR", {
 
 	/* show or hide module (compliments)
 	 * Requests new data from openweather.org.
-	 * Calls processWeather on succesfull response.
+	 * Calls processWeather on successful response.
 	 */
-	updateWarnings: function () {
+
+/*	updateWarnings: function () {
 
 		var url = `https://api.weather.gov/alerts/active/area/${this.config.area}`;
 		var self = this;
@@ -91,12 +92,13 @@ Module.register("MMM-RAIN-RADAR", {
 		}
 		);
 	},
-
+*/
 	/* processWarning(data)
 	 * Uses the received data to set the various values.
 	 *
 	 * argument data object - Weather information received form openweather.org.
 	 */
+	 /*
 	processWarning: function (data) {
 
 		console.log(this.name + ": Inside Process");
@@ -156,5 +158,5 @@ Module.register("MMM-RAIN-RADAR", {
 		}
 
 	},
-
+*/
 });
