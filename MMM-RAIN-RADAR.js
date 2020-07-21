@@ -58,7 +58,7 @@ Module.register("MMM-RAIN-RADAR", {
 		let code = this.config.code;
 		let town = this.config.town;
 		let country = this.config.country;
-		iframe.src = `https://www.accuweather.com/en/${country}/${town}/${zip}/weather-radar/${code}';
+		iframe.src = 'https://www.accuweather.com/en/${country}/${town}/${zip}/weather-radar/${code}';
 
 		return iframe;
 	},
